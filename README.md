@@ -118,7 +118,7 @@ All commands can be executed directly inside your GitHub Codespace using this re
 
 **.** The single dot (.) means “the current directory.” Syft will analyze all files and packages in the current working directory, which is ng911-dev 
 
-**-o spdx-json** Program option (-o) specifying the output format. Here, spdx-json tells Syft to format the results using the SPDX (Software Package Data Exchange) standard, in JSON form.
+**-o spdx-json** Program option (*-o*) specifying the output format. Here, spdx-json tells Syft to format the results using the SPDX (Software Package Data Exchange) standard, in JSON form.
 
 **>** This is a redirection operator in the Linux shell. It takes the output that would normally print to the terminal (your screen) and redirects it to a file instead
 
@@ -128,9 +128,9 @@ All commands can be executed directly inside your GitHub Codespace using this re
 
 /deliverables/ → Inside that parent directory, place the file in the deliverables folder
 
-sbom_syft_spdx.json → Name of the generated SBOM file
+*sbom_syft_spdx.json* → Name of the generated SBOM file
 
-So the full path means: “Save the SBOM JSON file one level up, inside the deliverables directory”
+So the full path means: “Save the SBOM JSON file one level up, inside the deliverables directory.”
 
 5. **Generate a CycloneDX SBOM (Trivy):**
 
@@ -143,17 +143,17 @@ So the full path means: “Save the SBOM JSON file one level up, inside the deli
 
 **fs** Program sub-command, short for **filesystem**, tells Trivy to scan the local files and directories (not a Docker image or repo)
 
-**.** The single dot (.) means “the current directory.” Trivy will inspect all the code and dependencies in your current working, which is ng911-dev 
+**.** The single dot (.) means “the current directory.” Trivy will inspect all the code and dependencies in your current working, which is *ng911-dev* 
 
-**--format cyclonedx** Program option (--format) specifying the output format. Here, cyclonedx tells Trivy to generate the SBOM in the CycloneDX format (an alternative to SPDX)
+**--format cyclonedx** Program option (*--format*) specifying the output format. Here, *cyclonedx* tells Trivy to generate the SBOM in the CycloneDX format (an alternative to SPDX)
 
-**--output ../deliverables/sbom_trivy_cdx.json** Program option (--output) defines where and what to name the output file:
+**--output ../deliverables/sbom_trivy_cdx.json** Program option (*--output*) defines where and what to name the output file:
 
 .. → Go up one directory level from the current folder
 
 /deliverables/ → Save it inside the deliverables directory
 
-sbom_trivy_cdx.json → The name of the generated CycloneDX SBOM file
+*sbom_trivy_cdx.json* → The name of the generated CycloneDX SBOM file
 
 So the file will be created as ../deliverables/sbom_trivy_cdx.json
 
@@ -178,7 +178,7 @@ So the file will be created as ../deliverables/sbom_trivy_cdx.json
    ```
 ### Syntax Breakdown
 
-**grype** Open-source command-line tool used to scans software packages and SBOMs for known vulnerabilities (CVEs) by checking them against vulnerability databases (e.g.,  NVD or GitHub Security Advisories)
+**grype** Open-source command-line tool used to scans software packages and SBOMs for known vulnerabilities (CVEs) by checking them against vulnerability databases (e.g.,  National Vulnerability Database (NVD) or GitHub Security Advisories)
 
 **sbom:../deliverables/sbom_syft_spdx.json** Tells Grype to use an existing SBOM as its input instead of scanning files directly.
 
@@ -186,7 +186,7 @@ sbom: → The prefix tells Grype the input is an SBOM file, not a filesystem or 
 
 ../deliverables/sbom_syft_spdx.json → Path to the SBOM generated earlier by Syft, one directory above the current folder inside deliverables
 
-**-o table** Program option (-o) specifying the output format. Here, table means results will be shown in a human-readable table format (columns for package, version, vulnerability, severity, etc.)
+**-o table** Program option (*-o*) specifying the output format. Here, *table* means results will be shown in a human-readable table format (columns for package, version, vulnerability, severity, etc.)
 
 **> ../deliverables/vuln_analysis_grype.txt** Redirects the command’s output into a text file instead of printing to the terminal.
 
@@ -194,7 +194,7 @@ sbom: → The prefix tells Grype the input is an SBOM file, not a filesystem or 
 
 /deliverables/ → Save it in the deliverables folder
 
-vuln_analysis_grype.txt → The file name for the vulnerability report
+*vuln_analysis_grype.txt* → The file name for the vulnerability report
 
 2. **In your report, include a table for the top 5 vulnerabilities that includes the following:**
 
