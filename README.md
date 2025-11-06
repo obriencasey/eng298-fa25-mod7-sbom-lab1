@@ -91,34 +91,46 @@ All commands can be executed directly inside your GitHub Codespace using this re
    git clone https://github.com/tamu-edu/ng911-dev.git
    ```
 
+   **Syntax breakdown**:
+   **git**: This invokes the *Git* command-line tool; the version control system used to manage source code repositories
+   **clone**: Git subcommand that creates a copy of a remote repository (like one hosted on GitHub) on your local machine or Codespace. It: 1). Downloads all files and directories from the repo, 2). Preserves the commit history and branches, and 3). Automatically configures a connection       (called a “**remote**”) to the source repository.
+   **https://github.com/tamu-edu/ng911-dev.git**: URL of the remote repository you want to clone. Let’s break that URL down further:
+
+   **Part**		   **Meaning**
+   https://	      Uses HTTPS protocol for secure download (instead of SSH or Git).
+   github.com	   The host (GitHub) where the repo lives.
+   tamu-edu	      The GitHub organization (Texas A&M University).
+   ng911-dev	   The repository name.
+   .git           Tells Git this is a repository endpoint, not a webpage.
+
    This will download the NG911 source code into your Codespace environment so you can generate and analyze its SBOM.
 
-2. **2.	Change into that folder, for example:**
+3. **2.	Change into that folder, for example:**
 
    ```bash
    cd ng911-dev
    ```
 
-3. **Generate an SBOM in SPDX format (Syft):**
+4. **Generate an SBOM in SPDX format (Syft):**
 
    ```bash
    syft . -o spdx-json > ../deliverables/sbom_syft_spdx.json
    ```
 
-4. **Generate a CycloneDX SBOM (Trivy):**
+5. **Generate a CycloneDX SBOM (Trivy):**
 
    ```bash
    trivy fs . --format cyclonedx --output ../deliverables/sbom_trivy_cdx.json
    ```
 
-5. **After both commands complete, run**
+6. **After both commands complete, run**
 
    ```bash
    ls ../deliverables/
    ```
    …to confirm your SBOM files were created (sbom_syft_spdx.json and sbom_trivy_cdx.json).
 
-6. **Record in your report:**
+7. **Record in your report:**
    - How many components each tool reported (Syft vs. Trivy),
    - One difference you notice between the SPDX SBOM and the CycloneDX SBOM (format, fields, component count, etc.), and
    - Screenshots of your terminal output.
