@@ -110,7 +110,7 @@ URL of the remote repository you want to clone.
 
    This will download the NG911 source code into your Codespace environment so you can generate and analyze its SBOM.
 
-3. **2.	Change into that folder, for example:**
+3. **Change into that folder, for example:**
 
    ```bash
    cd ng911-dev
