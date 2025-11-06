@@ -247,7 +247,7 @@ deliverables/
 
 1. Copy your forked repository URL:
    - Go to your forked repo on GitHub (it should look something like:  
-     `https://github.com/<your-username>/eng298-fa25-mod7-sbom-lab1`)
+     `https://github.com/<your-username>/eng298-fa25-mod7-sbom-lab1`
    - Copy the URL from your browser’s address bar.
 
 2. Submit the URL in Canvas:
